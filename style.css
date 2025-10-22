@@ -1,0 +1,382 @@
+/* Importação de uma fonte (opcional, mas recomendado para estilo) */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700&display=swap');
+
+/* Variáveis de Cores */
+:root {
+    --color-primary: #8B4513;
+    /* Marrom Café */
+    --color-secondary: #D2B48C;
+    /* Bege/Areia */
+    --color-text-dark: #333;
+    --color-text-light: #fff;
+    --color-dark-overlay: rgba(0, 0, 0, 0.4);
+}
+
+/* Reset Básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: var(--color-text-dark);
+    line-height: 1.6;
+    background-color: #f7f7f7;
+    /* Cor de fundo suave */
+}
+
+/* Utilitários */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* HEADER */
+.header {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-link {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-img {
+    height: 60px;
+    width: auto;
+    display: block;
+}
+
+.logo-text {
+    font-size: 1.2rem;
+    color: var(--color-primary);
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: var(--color-text-dark);
+    margin-right: 20px;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+}
+
+.nav-menu a:hover {
+    color: var(--color-primary);
+}
+
+.menu-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+    padding: 8px 15px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* SEÇÃO HERO */
+.hero-section {
+    background-image: url('img/grao_de_cafe.jpg');
+    background-size: cover;
+    background-position: center 30%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 51px;
+    position: relative;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--color-dark-overlay);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-content h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: var(--color-text-light);
+    max-width: 600px;
+    line-height: 1.2;
+}
+
+/* SEÇÃO DE DESTAQUE/DESCRIÇÃO */
+.description-section {
+    padding: 50px 0;
+    background-color: #ffffff;
+    opacity: 0.8;
+
+}
+
+.description-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.image-box {
+    overflow: hidden;
+    border-radius: 5px;
+    height: 300px;
+    background-color: #f0f0f0;
+}
+
+.description-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.text-box {
+    padding: 20px;
+    text-align: center;
+}
+
+.text-box p {
+    font-size: 1.1rem;
+    color: var(--color-text-dark);
+}
+
+.cta-button {
+    background-color: var(--color-primary);
+    color: var(--color-text-light);
+    border: none;
+
+    padding: 18px 50px;
+    font-size: 1.3rem;
+
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 2px;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+
+}
+
+.cta-button:hover {
+    background-color: #A0522D;
+}
+
+.cta-section {
+    background-image: url('img/tres_xicaras.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 600px;
+    padding-top: 80px;
+    padding-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+
+.cta-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+
+}
+
+
+.cta-content,
+.coffee-row {
+    position: relative;
+    z-index: 5;
+
+}
+
+.cta-content {
+    margin-bottom: 50px;
+
+}
+
+
+.coffee-row {
+    width: 100%;
+
+    display: flex;
+    justify-content: space-around;
+
+    align-items: flex-end;
+
+    padding-bottom: 20px;
+
+    max-width: 800px;
+
+}
+
+.coffee-image {
+    width: 25%;
+    height: auto;
+    max-width: 200px;
+}
+
+
+@media (max-width: 768px) {
+    .cta-section {
+        height: 450px;
+
+    }
+
+    .coffee-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coffee-image {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+}
+
+/* SEÇÃO SOBRE NÓS */
+.about-section {
+    background-color: #eee;
+    color: #444;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--color-primary);
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 10px auto 0;
+}
+
+.about-section p {
+    max-width: 800px;
+    margin: 0 auto 15px;
+}
+
+/* RODAPÉ */
+.footer {
+    background-color: var(--color-text-dark);
+    color: var(--color-text-light);
+    padding: 20px 0;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+.social-icons a {
+    color: var(--color-text-light);
+    font-size: 1.5rem;
+    margin-left: 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: var(--color-primary);
+}
+
+/* MEDIA QUERIES para Responsividade (melhor experiência em celulares) */
+@media (max-width: 768px) {
+    .header {
+        position: static;
+    }
+
+    .hero-section {
+        height: 50vh;
+        margin-top: 0;
+    }
+
+    .hero-content h2 {
+        font-size: 2.5rem;
+    }
+
+    .nav-menu a {
+        display: none;
+
+    }
+
+    .nav-container {
+        justify-content: center;
+    }
+
+    .description-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .text-box {
+        order: -1;
+
+    }
+
+    .coffee-row {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .coffee-image {
+        width: 60%;
+        margin-bottom: 20px;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-content p {
+        margin-bottom: 15px;
+    }
+
+    .social-icons a {
+        margin: 0 10px;
+    }
+}
